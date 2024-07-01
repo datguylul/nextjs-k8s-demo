@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  nextjs:
+    ports:
+      - 3024:3000
+    container_name: nextjs-k8s
+    image: nextjs-k8s:latest
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      NEXT_PUBLIC_URL_BE: https://xx
+      NEXT_PUBLIC_LOGO: ""
